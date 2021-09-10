@@ -1,8 +1,18 @@
 body { background-color: #eee; }
+.navbar { background-color: #1c1c1c; }
 .navbar-toggler { border: none; }
-.main { margin-top: 60px; }
+.modal .modal-header { border: none; }
+.modal .modal-content { background-color: #1c1c1c; }
+.modal-body .image { display: none; }
+.modal-body .image-label { background-color: #44aef5; border-radius: 5px; color: #fff; cursor: pointer; margin: 10px; padding: 6px 20px }
+.modal-body .custom-file-label::after { display: none; }
+.card { border: none; }
+.card:hover .card-buttons { display: block; }
+.card:hover .card-img-overlay { background-color: rgba(0, 0, 0, 0.4); }
+.card-buttons { display: none; bottom: 0.5em; right: 0.5em; position: absolute; }
+.appMain { margin-top: 60px; }
 .card .img { max-width: 100%; width: auto; height: 280px; object-fit: cover; }
-.alert { border-radius: 5px solid #2c2c2c; background-color: #2c2c2c; color: white; border: none; }
+.alert { border-radius: 5px; background-color: #1c1c1c; color: white; }
 .check { color: #45cb85; }
 .times { color: #f00000; }
-#message-alert { top: 70px; right: 10px; position: fixed; padding: 10px; }
+#message-alert { bottom: 0px; right: 10px; position: fixed; padding: 8px; border: none; }

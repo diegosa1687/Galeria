@@ -9,14 +9,13 @@
     <div class="row row-cols-1 row-cols-md-3">
         @foreach($files as $image)
         <div class="col mb-4">
-            <div class="card h-100">
-                <img src="{{ url("storage/img/" . $image) }}" class="card-img-top img" alt="{{ $image }}" style="max-width: 100%; width: auto; height: 280px; object-fit: cover;">
-                <div class="card-body">
-                    <p class="card-text">{{ $image }}</p>
-                </div>
-                <div class="card-footer">
-                    <a href="{{ url("storage/img/" . $image) }}" class="btn btn-primary" download>Download</a>
-                    <a href="{{ route('delete', $image) }}" class="btn btn-danger">Apagar</a>
+            <div class="card text-white bg-dark">
+                <img src="{{ url("storage/img/" . $image) }}" class="card-img img" alt="{{ $image }}" style="max-width: 100%; width: auto; height: 280px; object-fit: cover;">
+                <div class="card-img-overlay">
+                    <div class="card-buttons">
+                        <a href="{{ url("storage/img/" . $image) }}" class="btn btn-light" download>Download</a>
+                        <a href="{{ route('delete', $image) }}" class="btn btn-light">Apagar</a>
+                    </div>
                 </div>
             </div>
         </div>

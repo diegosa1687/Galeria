@@ -19,7 +19,7 @@
         @endcomponent
     </header>
 
-    <div class="main">
+    <div class="appMain">
         @hasSection ('content')
             @yield('content')
         @endif
@@ -32,6 +32,7 @@
 </div>
 
 <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js/style.js') }}" type="text/javascript"></script>
 @hasSection ('script')
     @yield('script')    
 @endif
