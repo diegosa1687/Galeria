@@ -7,3 +7,13 @@ input.addEventListener('change', (event) => {
     span.innerHTML = fileName[fileName.length - 1]
     console.log(fileName)
 });
+
+var login = document.getElementById('btn-login')
+login.addEventListener('click', () => {
+    $('.nav-tabs a[href="#login"]').tab('show')
+})
+
+var register = document.getElementById('btn-register')
+register.addEventListener('click', () => {
+    $('.nav-tabs a[href="#register"]').tab('show')
+})

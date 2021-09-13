@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,5 @@ use Illuminate\Http\Request;
 Route::get('/', [PagesController::class, 'home'])->name('home');
 Route::post('/enviar', [PagesController::class, 'enviar'])->name('enviar');
 Route::get('/delete/{fileName}', [PagesController::class, 'delete'])->name('delete');
+
+Auth::routes();

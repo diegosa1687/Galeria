@@ -14,27 +14,21 @@
 <body>
 
 <div id="app">
-    <header class="appNavbar">
-        @component('components/navbar')
-        @endcomponent
+    <header class="app-navbar">
+        @component('components/navbar') @endcomponent
     </header>
 
-    <div class="appMain">
-        @hasSection ('content')
-            @yield('content')
-        @endif
+    <div class="app-main">
+        @hasSection ('content') @yield('content') @endif
     </div>
 
-    <footer class="appFooter">
-        @component('components/footer')
-        @endcomponent
+    <footer class="app-footer">
+        @component('components/footer') @endcomponent
     </footer>
 </div>
 
 <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/style.js') }}" type="text/javascript"></script>
-@hasSection ('script')
-    @yield('script')    
-@endif
+@hasSection ('script') @yield('script') @endif
 </body>
 </html>
