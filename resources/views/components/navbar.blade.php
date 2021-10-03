@@ -6,19 +6,19 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mr-auto mt-2 mt-sm-0">
             <li class="nav-item">
-            <a class="nav-link" href="{{ route('home') }}">Início</a>
+                <a class="nav-link" href="{{ route('home') }}">Início</a>
             </li>
             <li class="nav-item" data-toggle="modal" data-target="#image">
-            <a class="nav-link" href="#"><i class="fas fa-plus-circle" style="margin-right: 6px"></i>Nova Imagem</a>
+                <a class="nav-link" href="#"><i class="fas fa-plus-circle" style="margin-right: 6px"></i>Nova Imagem</a>
             </li>
         </ul>
         <div class="form-inline my-2 my-sm-0">
             @guest
                 @if (Route::has('login'))
-                    <a class="btn btn-outline-light mr-3" href="{{ route('login') }}" data-toggle="modal" data-target="#login-register" id="btn-login">Entrar</a>
+                    <a class="btn btn-outline-light mr-3 rounded-pill" href="{{ route('login') }}" data-toggle="modal" data-target="#login-register" id="btn-login">Entrar</a>
                 @endif
                 @if (Route::has('register'))
-                    <a class="btn btn-outline-light" href="{{ route('register') }}" data-toggle="modal" data-target="#login-register" id="btn-register">Cadastrar</a>
+                    <a class="btn btn-outline-light rounded-pill" href="{{ route('register') }}" data-toggle="modal" data-target="#login-register" id="btn-register">Cadastrar</a>
                 @endif
             @else
                 <div class="nav-item dropdown">
@@ -56,8 +56,8 @@
                             </div>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-outline-warning" id="enviar">Enviar</button>
-                    <button type="button" class="btn btn-outline-info" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-outline-light rounded-pill" id="enviar">Enviar</button>
+                    <button type="button" class="btn btn-outline-light rounded-pill" data-dismiss="modal">Cancelar</button>
                 </form>
             </div>
         </div>
@@ -76,9 +76,12 @@
                 </li>
             </ul>
             <div class="tab-content" id="login-register-tabsContent">
-                <div class="tab-pane fade m-5 show" id="login" role="tabpanel" aria-labelledby="login-tab">
+                <div class="tab-pane fade m-5 show" id="login" style="margin-top: 20px !important;" role="tabpanel" aria-labelledby="login-tab">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
+                        <blockquote class="blockquote">
+                            <strong><p>Entrar</p></strong>
+                        </blockquote>
                         <div class="form-group mb-3">
                             <input type="email" class="form-input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Informe seu E-Mail">
                             @error('email')
@@ -103,16 +106,19 @@
                         </div>
 
                         <div class="form-group mb-3">
-                            <button type="submit" class="btn">Entrar</button>
+                            <button type="submit" class="btn button rounded-pill">Entrar</button>
                         </div>
                         <div class="form-group mb-3">
-                            <a class="btn" href="{{ route('password.request') }}">Esqueceu a senha?</a>
+                            <a class="btn button rounded-pill" href="{{ route('password.request') }}">Esqueci a senha</a>
                         </div>
                     </form>
                 </div>
-                <div class="tab-pane fade m-5" id="register" role="tabpanel" aria-labelledby="register-tab">
+                <div class="tab-pane fade m-5" id="register" role="tabpanel" style="margin-top: 20px !important;" aria-labelledby="register-tab">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
+                        <blockquote class="blockquote">
+                            <strong><p>Cadastrar</p></strong>
+                        </blockquote>
                         <div class="form-group">
                             <input type="text" class="form-input @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" placeholder="Digite seu nome" required>
                             @error('name')
@@ -148,8 +154,13 @@
                         <div class="form-group mb-3">
                             <input type="password" class="form-input" name="password_confirmation" required autocomplete="new-password" placeholder="Digite sua senha novamente">
                         </div>
+                        <div class="form-group form-check">
+                            <input class="check-input" type="checkbox" id="accept-terms" name="accept-terms">
+                            <label class="check-label" for="accept-terms">Li e aceito os termos e condições do site</label>
+                            <p><a href="#">Termos e condições</a></p>
+                        </div>
                         <div class="form-group">
-                            <button type="submit" class="btn">Cadastrar</button>
+                            <button type="submit" class="btn button rounded-pill">Cadastrar</button>
                         </div>
                     </form>
                 </div>

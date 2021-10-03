@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\PasswordResetEvent;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PagesController extends Controller {
     public function home() {
@@ -10,9 +13,7 @@ class PagesController extends Controller {
         $dir = dir($path);
         $files = [];
         while($file = $dir->read())
-            if(!($file == '.' || $file == '..')) {
-                $files[] = $file;
-            }
+            if(!($file == '.' || $file == '..')) $files[] = $file;
         $dir->close();
         return view('home', compact(['files']));
     }

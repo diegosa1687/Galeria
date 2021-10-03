@@ -1,35 +1,54 @@
+/* GERAL */
 body { background-color: #eee; }
+a, .nav-link { color: #eee; }
+.app-main { padding-top: 60px; }
+
+
+/* NAVBAR */
 .navbar { background-color: #1c1c1c; }
 .navbar-toggler { border: none; }
-.dropdown .nav-link { color: white; }
 .dropdown .navbar-brand { border-radius: 50%; padding: 5px; }
 .dropdown .navbar-brand:hover { background-color: #2c2c2c; }
+
+/* FORMS LOGIN-REGISTER */
 .form-group .form-input { padding: 15px; outline: none; background-color: #1c1c1c; width: 100%; height: 100%;
 border: 1px solid #1c1c1c; border-radius: 2px; border-bottom-color: #3c3c3c; color: #fff; }
 .form-group .form-input:focus { border-bottom-color: #44aef5; transition: all 0.3s; }
 .form-group .form-input:valid { border-color: #44aef5; }
-#login-register-tabs a { color: #eee; background-color: #1c1c1c; }
-#login-register-tabs { border-bottom: 1px solid #1c1c1c; }
-#login-register-tabs .nav-link { border: none; }
-#login-register-tabs .nav-link:hover { background-color: #3c3c3c; }
-#login-register .modal-content { border: none; }
-#login-register .btn { width: 100%; border: 1px solid #44aef5; color: white; }
-#login-register .btn:hover { border: 1px solid #2c2c2c; background-color: #44aef5; }
 .form-group input[type="checkbox"] { display: none; }
-.form-group input[type="checkbox"] + label:before { border: none; content: ""; display: inline-block; margin: 10px;
+.form-group input[type="checkbox"] + label:before { border: none; content: ""; display: inline-block; margin-right: 10px;
 height: 15px; width: 15px; padding: 0; border-radius: 2px; background-color: #3c3c3c; vertical-align: middle; }
 .form-group input[type="checkbox"]:checked + label:before { transform: rotate(45deg); background: #44aef5; }
+.button { width: 100%; border: 1px solid #44aef5; color: #eee; }
+.button:hover { background-color: #44aef5; }
+
+/* TABS LOGIN-REGISTER */
+#login-register-tabs { border-bottom: 1px solid #1c1c1c; }
+#login-register-tabs .nav-link { border: none; background-color: #1c1c1c; color: #444; }
+#login-register-tabs .nav-link:hover { background-color: #2c2c2c; color: #eee; }
+#login-register-tabs .active { background-color: #1c1c1c; color: #eee; }
+#login-register .modal-content { border: none; }
+
+
+/* MODALS UPIMAGE-LOGIN-REGISTER */
 .modal .modal-header { border: none; }
 .modal .modal-content { background-color: #1c1c1c; }
 .modal-body .image { display: none; }
 .modal-body .image-label { background-color: #44aef5; border-radius: 5px; color: #fff; cursor: pointer; margin: 10px; padding: 6px 20px }
 .modal-body .custom-file-label::after { display: none; }
+
+/* CARDS */
 .card { border: none; }
 .card:hover .card-buttons { display: block; }
 .card:hover .card-img-overlay { background-color: rgba(0, 0, 0, 0.4); transition: all 0.3s ease; }
 .card-buttons { display: none; bottom: 0.5em; right: 0.5em; position: absolute; }
-.app-main { padding-top: 60px; }
 .card .img { max-width: 100%; width: auto; height: 280px; object-fit: cover; }
+
+/* DIV VERTICAL-CENTERED */
+.v-centered { position: relative; }
+.v-centered:nth-child(1) { top:50%; transform: translateY(-50%); position: absolute; }
+
+/* IMAGE UPLOAD */
 .alert { border-radius: 5px; background-color: #1c1c1c; color: white; }
 .check { color: #45cb85; }
 .times { color: #f00000; }
