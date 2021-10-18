@@ -1,20 +1,23 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="body" style="padding: 20px;">
-    <div class="row row-cols-1 row-cols-md-3">
+<div class="body">
+    <div class="card-columns">
         @foreach($files as $image)
-        <div class="col mb-4">
             <div class="card text-white bg-dark">
-                <img src="{{ url("storage/img/" . $image) }}" class="card-img img" alt="{{ $image }}" style="max-width: 100%; width: auto; height: 280px; object-fit: cover;">
+                <img src="{{ url("storage/img/" . $image) }}" class="card-img" alt="{{ $image }}" style="width: 100%; height: 100%;">
                 <div class="card-img-overlay">
                     <div class="card-buttons">
-                        <a href="{{ url("storage/img/" . $image) }}" class="btn btn-outline-light rounded-pill" download>Download</a>
-                        <a href="{{ route('delete', $image) }}" class="btn btn-outline-light rounded-pill">Apagar</a>
+                        <button type="button" class="button button-card" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span><i class="fas fa-caret-down"></i></span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="{{ url("storage/img/" . $image) }}" class="dropdown-item" download>Download</a>
+                            <a href="{{ route('delete', $image) }}" class="dropdown-item">Apagar</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         @endforeach
     </div>
 </div>

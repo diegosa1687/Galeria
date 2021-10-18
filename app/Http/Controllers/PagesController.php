@@ -41,4 +41,8 @@ class PagesController extends Controller {
         unlink($path . $fileName);
         return redirect()->route('home');
     }
+
+    public function my_profile($username) {
+        return view('user.profile', compact(['username']));
+    }
 }

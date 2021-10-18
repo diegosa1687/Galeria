@@ -20,16 +20,8 @@
 
     <div class="app-main">
         @hasSection ('content') @yield('content') @endif
-        @if (session('message'))   
-            <div id="message-alert" class="alert alert-dark" role="alert">
-                @if (session('message') == 'Upload realizado com sucesso!')
-                    <i class="fas fa-check-circle check"></i>
-                @else
-                    <i class="fas fa-times-circle times"></i>
-                @endif
-                {{ session('message') }}
-            </div>
-        @endif
+        @component('components/add-image-button') @endcomponent
+        @component('components/alerts') @endcomponent
     </div>
 
     <footer class="app-footer">

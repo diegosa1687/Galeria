@@ -19,5 +19,6 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', [PagesController::class, 'home'])->name('home');
 Route::post('/enviar', [PagesController::class, 'enviar'])->name('enviar');
 Route::get('/delete/{fileName}', [PagesController::class, 'delete'])->name('delete');
+Route::get('/{username}', [PagesController::class, 'my_profile'])->middleware(['auth', 'user.protect:username'])->name('my-profile');
 
 Auth::routes();

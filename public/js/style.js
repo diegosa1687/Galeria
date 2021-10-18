@@ -1,11 +1,12 @@
-// se existir um elemento com id 'image' e um elemento com id 'file-name', ele entra dentro da condição
-if((input = document.getElementById('image')) && (span = document.getElementById('file-name')))
+// se existir um elemento com id 'image' e um elemento com id 'input-file-name', ele entra dentro da condição
+if((input = document.getElementById('image')) && (span = document.getElementById('input-file-name')) && (btn = document.getElementById('input-file-button')))
     input.addEventListener('change', (event) => {
         // é necessário dividir o array pois o seu retorno é C:\fakepath\fileName
         let fileName = (event.target.value).split('\\')
         // pegamos agora o 'fileName' em ['C:', 'fakepath', 'fileName']
         span.innerHTML = fileName[(fileName.length - 1)]
-        console.log(fileName)
+        // adicionar a classe .chosen ao botão
+        btn.className += " chosen";
     })
 
 // se na página existirem os botões login e cadastro, ele entrará dentro da condição
@@ -19,6 +20,4 @@ if((btnlogin = document.getElementById('btn-login')) && (btnregister = document.
     })
 }
 
-$("#message-alert").fadeTo(2000, 500).slideUp(500, function(){
-    $("#message-alert").slideUp(500);
-});
+$('.toast').toast('show');
